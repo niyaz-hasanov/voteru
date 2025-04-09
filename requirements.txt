@@ -1,0 +1,7 @@
+google-cloud-bigquery
+google-auth
+streamlit
+streamlit-aggrid
+pandas
+numpy
+db-dtypes
