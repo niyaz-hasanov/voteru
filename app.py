@@ -120,7 +120,7 @@ st.markdown(f"**Cəmi sətir sayı:** {int(total_rows)} | Göstərilən: {rows_p
 with st.expander("📝Sütun adlarını dəyişdir"):
     rename_map = {}
     for col in df.columns:
-        new_name = st.text_input(f"{col} Sütunun yeni adı:", value=col, key=f"rename_{col}")
+        new_name = st.text_area(f"{col} Sütunun yeni adı:", value=col, key=f"rename_{col}")
         rename_map[col] = new_name
     df.rename(columns=rename_map, inplace=True)
 
@@ -193,7 +193,7 @@ if selected:
             if key == "id":
                 st.text(f"{key}: {value}")
                 continue
-            updated_data[key] = st.text_input(f"{key}:", value=str(value))
+            updated_data[key] = st.text_area(f"{key}:", value=str(value))
 
         submitted = st.form_submit_button("💾 Dəyişiklikləri yadda saxla")
 
@@ -253,7 +253,7 @@ with st.expander("➕ Yeni şəxs əlavə et"):
 
     with st.form("add_form"):
         for field in fields:
-            new_data[field] = st.text_input(f"{field}:")
+            new_data[field] = st.text_area(f"{field}:")
 
         submitted = st.form_submit_button("📤 Əlavə et")
 
